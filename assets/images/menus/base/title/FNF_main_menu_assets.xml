@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="FNF_main_menu_assets.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="freeplay basic instance 10000" x="10" y="10" width="770" height="151"/>
+	<SubTexture name="freeplay basic instance 10001" x="10" y="10" width="770" height="151"/>
+	<SubTexture name="freeplay basic instance 10002" x="10" y="10" width="770" height="151"/>
+	<SubTexture name="freeplay basic instance 10003" x="10" y="10" width="770" height="151"/>
+	<SubTexture name="freeplay basic instance 10004" x="10" y="10" width="770" height="151"/>
+	<SubTexture name="freeplay basic instance 10005" x="10" y="10" width="770" height="151"/>
+	<SubTexture name="freeplay basic instance 10006" x="10" y="10" width="770" height="151"/>
+	<SubTexture name="freeplay basic instance 10007" x="10" y="10" width="770" height="151"/>
+	<SubTexture name="freeplay basic instance 10008" x="10" y="10" width="770" height="151"/>
+	<SubTexture name="freeplay white instance 10000" x="10" y="173" width="877" height="158"/>
+	<SubTexture name="freeplay white instance 10001" x="10" y="173" width="877" height="158"/>
+	<SubTexture name="freeplay white instance 10002" x="10" y="173" width="877" height="158"/>
+	<SubTexture name="options basic instance 10000" x="10" y="343" width="666" height="129"/>
+	<SubTexture name="options basic instance 10001" x="10" y="343" width="666" height="129"/>
+	<SubTexture name="options basic instance 10002" x="10" y="343" width="666" height="129"/>
+	<SubTexture name="options basic instance 10003" x="10" y="343" width="666" height="129"/>
+	<SubTexture name="options basic instance 10004" x="10" y="343" width="666" height="129"/>
+	<SubTexture name="options basic instance 10005" x="10" y="343" width="666" height="129"/>
+	<SubTexture name="options basic instance 10006" x="10" y="343" width="666" height="129"/>
+	<SubTexture name="options basic instance 10007" x="10" y="343" width="666" height="129"/>
+	<SubTexture name="options basic instance 10008" x="10" y="343" width="666" height="129"/>
+	<SubTexture name="options white instance 10000" x="10" y="484" width="765" height="171"/>
+	<SubTexture name="options white instance 10001" x="10" y="484" width="765" height="171"/>
+	<SubTexture name="options white instance 10002" x="10" y="484" width="765" height="171"/>
+</TextureAtlas>
