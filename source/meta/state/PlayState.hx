@@ -648,17 +648,6 @@ class PlayState extends MusicBeatState
 		}
 
 		if (!inCutscene) {
-			// pause the game if the game is allowed to pause and enter is pressed
-       if (FlxG.keys.justPressed.ENTER #if android || FlxG.android.justReleased.BACK #end && startedCountdown && canPause)
-				// update drawing stuffs
-				persistentUpdate = false;
-				persistentDraw = true;
-				paused = true;
-
-				// open pause substate
-				openSubState(new PauseSubState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
-				updateRPC(true);
-
 			// make sure you're not cheating lol
 			if (!isStoryMode)
 			{
