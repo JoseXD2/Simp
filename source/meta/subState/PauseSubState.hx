@@ -108,7 +108,12 @@ class PauseSubState extends MusicBeatSubState
 			switch (daSelected)
 			{
 				case "Resume":
-					close();
+			    #if android
+			    flixel.addons.transition.FlxTransitionableState.skipNextTransOut = true;
+			    FlxG.resetState();
+			    #else
+			    close();
+			    #end
 				case "Restart Song":
 					Main.switchState(this, new PlayState());
 				case "Exit to menu":
