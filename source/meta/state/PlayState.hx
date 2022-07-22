@@ -436,11 +436,11 @@ class PlayState extends MusicBeatState
 		#end
 
 		//
-		keysArray = [
-			copyKey(Init.gameControls.get('LEFT')[0]),
-			copyKey(Init.gameControls.get('DOWN')[0]),
-			copyKey(Init.gameControls.get('UP')[0]),
-			copyKey(Init.gameControls.get('RIGHT')[0])
+	  keysArray = [
+		copyKey(Init.gameControls.get('LEFT')[0]),
+		copyKey(Init.gameControls.get('DOWN')[0]),
+		copyKey(Init.gameControls.get('UP')[0]),
+		copyKey(Init.gameControls.get('RIGHT')[0])
 		];
 
 		FlxG.stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyPress);
@@ -504,10 +504,11 @@ class PlayState extends MusicBeatState
 		}
 		return copiedArray;
 	}
-	
+
 	var keysArray:Array<Dynamic>;
 
-	public function onKeyPress(event:KeyboardEvent):Void {
+	public function onKeyPress(event:KeyboardEvent):Void
+	{
 		var eventKey:FlxKey = event.keyCode;
 		var key:Int = getKeyFromEvent(eventKey);
 
@@ -547,7 +548,8 @@ class PlayState extends MusicBeatState
 								eligable = false;
 						}
 
-						if (eligable) {
+						if (eligable)
+						{
 							goodNoteHit(coolNote, boyfriend, boyfriendStrums, firstNote); // then hit the note
 							pressedNotes.push(coolNote);
 						}
@@ -561,24 +563,27 @@ class PlayState extends MusicBeatState
 				Conductor.songPosition = previousTime;
 			}
 
-			if (boyfriendStrums.receptors.members[key] != null 
-			&& boyfriendStrums.receptors.members[key].animation.curAnim.name != 'confirm')
+			if (boyfriendStrums.receptors.members[key] != null
+				&& boyfriendStrums.receptors.members[key].animation.curAnim.name != 'confirm')
 				boyfriendStrums.receptors.members[key].playAnim('pressed');
 		}
 	}
 
-	public function onKeyRelease(event:KeyboardEvent):Void {
+	public function onKeyRelease(event:KeyboardEvent):Void
+	{
 		var eventKey:FlxKey = event.keyCode;
 		var key:Int = getKeyFromEvent(eventKey);
 
-		if (FlxG.keys.enabled && !paused && (FlxG.state.active || FlxG.state.persistentUpdate)) {
+		if (FlxG.keys.enabled && !paused && (FlxG.state.active || FlxG.state.persistentUpdate))
+		{
 			// receptor reset
 			if (key >= 0 && boyfriendStrums.receptors.members[key] != null)
 				boyfriendStrums.receptors.members[key].playAnim('static');
 		}
 	}
 
-	private function getKeyFromEvent(key:FlxKey):Int {
+	private function getKeyFromEvent(key:FlxKey):Int
+	{
 		if (key != NONE)
 		{
 			for (i in 0...keysArray.length)
@@ -593,9 +598,10 @@ class PlayState extends MusicBeatState
 		return -1;
 	}
 
-	override public function destroy() {
-		FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN, onKeyPress);
-		FlxG.stage.removeEventListener(KeyboardEvent.KEY_UP, onKeyRelease);
+	override public function destroy()
+	{
+			FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN, onKeyPress);
+			FlxG.stage.removeEventListener(KeyboardEvent.KEY_UP, onKeyRelease);
 
 		super.destroy();
 	}
