@@ -443,8 +443,11 @@ class PlayState extends MusicBeatState
 		copyKey(Init.gameControls.get('RIGHT')[0])
 		];
 
-		FlxG.stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyPress);
-		FlxG.stage.addEventListener(KeyboardEvent.KEY_UP, onKeyRelease);
+		if (!Init.trueSettings.get('Controller Mode'))
+		{
+			FlxG.stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyPress);
+			FlxG.stage.addEventListener(KeyboardEvent.KEY_UP, onKeyRelease);
+		}
 		
 		Paths.clearUnusedMemory();
 
@@ -514,7 +517,7 @@ class PlayState extends MusicBeatState
 
 		if ((key >= 0)
 			&& !boyfriendStrums.autoplay
-			&& (FlxG.keys.checkStatus(eventKey, JUST_PRESSED))
+			&& (FlxG.keys.checkStatus(eventKey, JUST_PRESSED || Init.trueSettings.get('Controller Mode'))
 			&& (FlxG.keys.enabled && !paused && (FlxG.state.active || FlxG.state.persistentUpdate)))
 		{
 			if (generatedMusic)
@@ -600,8 +603,11 @@ class PlayState extends MusicBeatState
 
 	override public function destroy()
 	{
+		if (!Init.trueSettings.get('Controller Mode'))
+		{
 			FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN, onKeyPress);
 			FlxG.stage.removeEventListener(KeyboardEvent.KEY_UP, onKeyRelease);
+		}
 
 		super.destroy();
 	}
