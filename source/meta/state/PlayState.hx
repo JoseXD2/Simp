@@ -517,8 +517,8 @@ class PlayState extends MusicBeatState
 
 		if ((key >= 0)
 			&& !boyfriendStrums.autoplay
-			&& (FlxG.keys.checkStatus(eventKey, JUST_PRESSED || Init.trueSettings.get('Controller Mode'))
-			&& (FlxG.keys.enabled && !paused && (FlxG.state.active || FlxG.state.persistentUpdate))
+			&& (FlxG.keys.checkStatus(eventKey, JUST_PRESSED) || Init.trueSettings.get('Controller Mode'))
+			&& (FlxG.keys.enabled && !paused && (FlxG.state.active || FlxG.state.persistentUpdate)))
 		{
 			if (generatedMusic)
 			{
