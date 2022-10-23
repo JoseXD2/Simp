@@ -3,7 +3,7 @@
 
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="Friday Night Funkin' Forever Engine" file="Forever-Engine" packageName="com.yoshubs.foreverengine" package="com.yoshubs.foreverengine" main="Main" version="0.2.7.1" company="Yoshubs" />
+	<app title="FNF: VS Simp" file="Forever-Engine" packageName="com.theorda.simp" package="com.theorda.simp" main="Main" version="0.2.7.1" company="TheOrda" />
 
 	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
 		or you can set the actual size of your file manually at "FlxPreloaderBase-onUpdate-bytesTotal"-->
@@ -45,7 +45,6 @@
 	<haxelib name="flixel-ui"/>
 	<haxelib name="polymod" />
 	<haxelib name="discord_rpc" if="desktop"/>
-	<haxelib name="extension-androidtools" if="android"/>
 
 	<!-- ______________________________ Haxedefines _____________________________ -->
 
