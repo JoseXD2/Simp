@@ -2097,7 +2097,7 @@ class PlayState extends MusicBeatState
 
 	function callTextbox() {
 		var dialogPath = Paths.json(SONG.song.toLowerCase() + '/dialogue');
-		if (openfl.utils.Assets(dialogPath))
+		if (Assets(dialogPath))
 		{
 			startedCountdown = false;
 
