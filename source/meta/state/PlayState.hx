@@ -484,7 +484,7 @@ class PlayState extends MusicBeatState
 		// Uncomment the code below to apply the effect
 
 		/*
-		var shader:GraphicsShader = new GraphicsShader("", File.getContent(SUtil.getPath() + "assets/shaders/vhs.frag"));
+		var shader:GraphicsShader = new GraphicsShader("", OpenFlAssets.getText("assets/shaders/vhs.frag")); lol
 		FlxG.camera.setFilters([new ShaderFilter(shader)]);
 		*/
 	}
@@ -2096,8 +2096,8 @@ class PlayState extends MusicBeatState
 	}
 
 	function callTextbox() {
-		var dialogPath = SUtil.getPath() + Paths.json(SONG.song.toLowerCase() + '/dialogue');
-		if (sys.FileSystem.exists(dialogPath))
+		var dialogPath = Paths.json(SONG.song.toLowerCase() + '/dialogue');
+		if (openfl.utils.Assets(dialogPath))
 		{
 			startedCountdown = false;
 
