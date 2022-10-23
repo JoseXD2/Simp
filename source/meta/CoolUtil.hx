@@ -65,7 +65,9 @@ class CoolUtil
 		//
 		var libraryArray:Array<String> = [];
 		#if !html5
-		var unfilteredLibrary = FileSystem.readDirectory(SUtil.getPath() + '$subDir/$library');
+		var list = Assets.list();
+
+		var unfilteredLibrary = list.filter(text -> text.contains('$subDir/$library'));
 
 		for (folder in unfilteredLibrary)
 		{
