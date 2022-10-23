@@ -17,6 +17,7 @@ import meta.data.dependency.Discord;
 import meta.data.dependency.FNFTransition;
 import meta.data.dependency.FNFUIState;
 import openfl.Assets;
+import openfl.utils.Assets as OpenFlAssets;
 import openfl.Lib;
 import openfl.display.FPS;
 import openfl.display.Sprite;
@@ -25,6 +26,7 @@ import openfl.events.UncaughtErrorEvent;
 import sys.FileSystem;
 import sys.io.File;
 import sys.io.Process;
+import lime.system.System;
 
 // Here we actually import the states and metadata, and just the metadata.
 // It's nice to have modularity so that we don't have ALL elements loaded at the same time.
@@ -175,8 +177,6 @@ class Main extends Sprite
 			// if set to negative one, it is done so automatically, which is the default.
 		}
 
-		SUtil.check();
-
 		FlxTransitionableState.skipNextTransIn = true;
 		
 		// here we set up the base game
@@ -255,7 +255,7 @@ class Main extends Sprite
 		dateNow = StringTools.replace(dateNow, " ", "_");
 		dateNow = StringTools.replace(dateNow, ":", "'");
 
-		path = SUtil.getPath() + "crash/" + "FE_" + dateNow + ".txt";
+		path = Main.path + "crash/" + "FE_" + dateNow + ".txt";
 
 		for (stackItem in callStack)
 		{
@@ -270,15 +270,15 @@ class Main extends Sprite
 
 		errMsg += "\nUncaught Error: " + e.error + "\nPlease report this error to the GitHub page: https://github.com/Yoshubs/Forever-Engine";
 
-		if (!FileSystem.exists(SUtil.getPath() + "crash/"))
-			FileSystem.createDirectory(SUtil.getPath() + "crash/");
+		if (!OpenFlAssets.exists("crash/"))
+			FileSystem.createDirectory(Main.path + "crash/");
 
 		File.saveContent(path, errMsg + "\n");
 
 		Sys.println(errMsg);
 		Sys.println("Crash dump saved in " + Path.normalize(path));
 
-		var crashDialoguePath:String = SUtil.getPath() + "FE-CrashDialog";
+		var crashDialoguePath:String = Main.path + "FE-CrashDialog";
 
 		#if windows
 		crashDialoguePath += ".exe";
