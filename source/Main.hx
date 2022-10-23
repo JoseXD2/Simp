@@ -79,6 +79,8 @@ class Main extends Sprite
 	var skipSplash:Bool = true; // Whether to skip the flixel splash screen that appears in release mode.
 	var infoCounter:InfoHud; // initialize the heads up display that shows information before creating it.
 
+  public static var path:String = System.applicationStorageDirectory;
+
 	// heres gameweeks set up!
 
 	/**
