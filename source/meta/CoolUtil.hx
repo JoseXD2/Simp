@@ -67,7 +67,7 @@ class CoolUtil
 		#if !html5
 		var list = Assets.list();
 
-		var unfilteredLibrary = list.filter(text -> text.contains('$subDir/$library');
+		var unfilteredLibrary = list.filter(text -> text.contains('$subDir/$library'));
 
 		for (folder in unfilteredLibrary)
 		{
